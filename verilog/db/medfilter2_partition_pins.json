@@ -1,0 +1,25 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Done_sig",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "RSTn",
+					"strict" : false
+				},
+				{
+					"name" : "Start_sig",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Jul 11 16:29:58 2020
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : medfilter2
+Top-level Entity Name : medfilter2
+Family : Cyclone IV E
+Total logic elements : 12
+    Total combinational functions : 11
+    Dedicated logic registers : 12
+Total registers : 12
+Total pins : 12
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,632 @@
+Analysis & Synthesis report for medfilter2
+Sat Jul 11 16:29:58 2020
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Port Connectivity Checks: "counter_ctrl:counter_ctrl_inst"
+ 12. Port Connectivity Checks: "win3by3_gen:win3by3_gen_inst"
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Jul 11 16:29:58 2020           ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Revision Name                      ; medfilter2                                      ;
+; Top-level Entity Name              ; medfilter2                                      ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 12                                              ;
+;     Total combinational functions  ; 11                                              ;
+;     Dedicated logic registers      ; 12                                              ;
+; Total registers                    ; 12                                              ;
+; Total pins                         ; 12                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                            ; medfilter2         ; medfilter2         ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                   ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                     ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
+; win3by3_gen.v                    ; yes             ; User Verilog HDL File  ; C:/singal2/final_project/verilog/win3by3_gen.v   ;         ;
+; medfilter3by3.v                  ; yes             ; User Verilog HDL File  ; C:/singal2/final_project/verilog/medfilter3by3.v ;         ;
+; medfilter2.v                     ; yes             ; User Verilog HDL File  ; C:/singal2/final_project/verilog/medfilter2.v    ;         ;
+; counter_ctrl.v                   ; yes             ; User Verilog HDL File  ; C:/singal2/final_project/verilog/counter_ctrl.v  ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 12        ;
+;                                             ;           ;
+; Total combinational functions               ; 11        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 3         ;
+;     -- 3 input functions                    ; 4         ;
+;     -- <=2 input functions                  ; 4         ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 8         ;
+;     -- arithmetic mode                      ; 3         ;
+;                                             ;           ;
+; Total registers                             ; 12        ;
+;     -- Dedicated logic registers            ; 12        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 12        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 12        ;
+; Total fan-out                               ; 84        ;
+; Average fan-out                             ; 1.79      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                            ;
++---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                          ; Entity Name   ; Library Name ;
++---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+---------------+--------------+
+; |medfilter2                           ; 11 (0)              ; 12 (0)                    ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |medfilter2                                  ; medfilter2    ; work         ;
+;    |counter_ctrl:counter_ctrl_inst|   ; 1 (1)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |medfilter2|counter_ctrl:counter_ctrl_inst   ; counter_ctrl  ; work         ;
+;    |medfilter3by3:medfilter3by3_inst| ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |medfilter2|medfilter3by3:medfilter3by3_inst ; medfilter3by3 ; work         ;
+;    |win3by3_gen:win3by3_gen_inst|     ; 6 (6)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |medfilter2|win3by3_gen:win3by3_gen_inst     ; win3by3_gen   ; work         ;
++---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                           ;
++-----------------------------------------------------+----------------------------------------+
+; Register name                                       ; Reason for Removal                     ;
++-----------------------------------------------------+----------------------------------------+
+; win3by3_gen:win3by3_gen_inst|m[0..9]                ; Lost fanout                            ;
+; win3by3_gen:win3by3_gen_inst|n[0..9]                ; Lost fanout                            ;
+; counter_ctrl:counter_ctrl_inst|imk[0..17]           ; Lost fanout                            ;
+; counter_ctrl:counter_ctrl_inst|column_addr[0..9]    ; Lost fanout                            ;
+; counter_ctrl:counter_ctrl_inst|row_addr[0..9]       ; Lost fanout                            ;
+; win3by3_gen:win3by3_gen_inst|a33[0]                 ; Stuck at GND due to stuck port data_in ;
+; win3by3_gen:win3by3_gen_inst|a11[0..7]              ; Stuck at GND due to stuck port data_in ;
+; win3by3_gen:win3by3_gen_inst|a12[0..7]              ; Stuck at GND due to stuck port data_in ;
+; win3by3_gen:win3by3_gen_inst|a13[0..7]              ; Stuck at GND due to stuck port data_in ;
+; win3by3_gen:win3by3_gen_inst|a21[0..7]              ; Stuck at GND due to stuck port data_in ;
+; win3by3_gen:win3by3_gen_inst|a22[0..7]              ; Stuck at GND due to stuck port data_in ;
+; win3by3_gen:win3by3_gen_inst|a23[0..7]              ; Stuck at GND due to stuck port data_in ;
+; win3by3_gen:win3by3_gen_inst|a31[0..7]              ; Stuck at GND due to stuck port data_in ;
+; win3by3_gen:win3by3_gen_inst|a32[0..7]              ; Stuck at GND due to stuck port data_in ;
+; win3by3_gen:win3by3_gen_inst|a33[1..7]              ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|a11[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|a12[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|a13[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|a21[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|a22[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|a23[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|a31[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|a32[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|a33[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|b11[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|b12[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|b13[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|b21[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|b22[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|b23[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|b31[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|b32[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|b33[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|c13[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|c22[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|c31[0..7]          ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|medfilt_data[0..7] ; Stuck at GND due to stuck port data_in ;
+; medfilter3by3:medfilter3by3_inst|i[2]               ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 307             ;                                        ;
++-----------------------------------------------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                         ;
++-------------------------------------+---------------------------+-----------------------------------------------------------------------------------+
+; Register name                       ; Reason for Removal        ; Registers Removed due to This Register                                            ;
++-------------------------------------+---------------------------+-----------------------------------------------------------------------------------+
+; win3by3_gen:win3by3_gen_inst|a11[7] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a11[7], medfilter3by3:medfilter3by3_inst|b11[7], ;
+;                                     ; due to stuck port data_in ; medfilter3by3:medfilter3by3_inst|b11[3], medfilter3by3:medfilter3by3_inst|b11[2], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b11[1], medfilter3by3:medfilter3by3_inst|b11[0], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b21[7], medfilter3by3:medfilter3by3_inst|b21[6], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b21[5], medfilter3by3:medfilter3by3_inst|b21[4], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b21[3], medfilter3by3:medfilter3by3_inst|b21[2], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b21[1], medfilter3by3:medfilter3by3_inst|b21[0], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b31[7], medfilter3by3:medfilter3by3_inst|b31[3], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b31[2], medfilter3by3:medfilter3by3_inst|b31[1], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b31[0], medfilter3by3:medfilter3by3_inst|c13[7], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|c13[3], medfilter3by3:medfilter3by3_inst|c13[2], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|c13[1], medfilter3by3:medfilter3by3_inst|c13[0], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|c22[7], medfilter3by3:medfilter3by3_inst|c22[6], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|c22[5], medfilter3by3:medfilter3by3_inst|c22[4], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|c22[3], medfilter3by3:medfilter3by3_inst|c22[2], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|c22[1], medfilter3by3:medfilter3by3_inst|c22[0], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|c31[7], medfilter3by3:medfilter3by3_inst|c31[3], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|c31[2], medfilter3by3:medfilter3by3_inst|c31[1], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|c31[0],                                          ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|medfilt_data[0],                                 ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|medfilt_data[7],                                 ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|medfilt_data[6],                                 ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|medfilt_data[5],                                 ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|medfilt_data[4],                                 ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|medfilt_data[3],                                 ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|medfilt_data[2],                                 ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|medfilt_data[1]                                  ;
+; win3by3_gen:win3by3_gen_inst|a13[7] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a13[7], medfilter3by3:medfilter3by3_inst|b13[7], ;
+;                                     ; due to stuck port data_in ; medfilter3by3:medfilter3by3_inst|b13[3], medfilter3by3:medfilter3by3_inst|b13[2], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b13[1], medfilter3by3:medfilter3by3_inst|b13[0], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b23[7], medfilter3by3:medfilter3by3_inst|b23[6], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b23[5], medfilter3by3:medfilter3by3_inst|b23[4], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b23[3], medfilter3by3:medfilter3by3_inst|b23[2], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b23[1], medfilter3by3:medfilter3by3_inst|b23[0], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b33[7], medfilter3by3:medfilter3by3_inst|b33[3], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b33[2], medfilter3by3:medfilter3by3_inst|b33[1], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b33[0]                                           ;
+; win3by3_gen:win3by3_gen_inst|a12[7] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a12[7], medfilter3by3:medfilter3by3_inst|b12[7], ;
+;                                     ; due to stuck port data_in ; medfilter3by3:medfilter3by3_inst|b12[3], medfilter3by3:medfilter3by3_inst|b12[2], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b12[1], medfilter3by3:medfilter3by3_inst|b12[0], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b22[7], medfilter3by3:medfilter3by3_inst|b22[6], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b22[5], medfilter3by3:medfilter3by3_inst|b22[4], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b22[3], medfilter3by3:medfilter3by3_inst|b22[2], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b22[1], medfilter3by3:medfilter3by3_inst|b22[0], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b32[7], medfilter3by3:medfilter3by3_inst|b32[3], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b32[2], medfilter3by3:medfilter3by3_inst|b32[1], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b32[0]                                           ;
+; win3by3_gen:win3by3_gen_inst|a11[6] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a11[6], medfilter3by3:medfilter3by3_inst|b11[6], ;
+;                                     ; due to stuck port data_in ; medfilter3by3:medfilter3by3_inst|b11[5], medfilter3by3:medfilter3by3_inst|b11[4], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b31[6], medfilter3by3:medfilter3by3_inst|b31[5], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b31[4], medfilter3by3:medfilter3by3_inst|c13[6], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|c13[5], medfilter3by3:medfilter3by3_inst|c13[4], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|c31[6], medfilter3by3:medfilter3by3_inst|c31[5], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|c31[4]                                           ;
+; win3by3_gen:win3by3_gen_inst|a12[6] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a12[6], medfilter3by3:medfilter3by3_inst|b12[6], ;
+;                                     ; due to stuck port data_in ; medfilter3by3:medfilter3by3_inst|b12[5], medfilter3by3:medfilter3by3_inst|b12[4], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b32[6], medfilter3by3:medfilter3by3_inst|b32[5], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b32[4]                                           ;
+; win3by3_gen:win3by3_gen_inst|a13[6] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a13[6], medfilter3by3:medfilter3by3_inst|b13[6], ;
+;                                     ; due to stuck port data_in ; medfilter3by3:medfilter3by3_inst|b13[5], medfilter3by3:medfilter3by3_inst|b13[4], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b33[6], medfilter3by3:medfilter3by3_inst|b33[5], ;
+;                                     ;                           ; medfilter3by3:medfilter3by3_inst|b33[4]                                           ;
+; win3by3_gen:win3by3_gen_inst|m[8]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|row_addr[8]                                        ;
+; win3by3_gen:win3by3_gen_inst|m[7]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|row_addr[7]                                        ;
+; win3by3_gen:win3by3_gen_inst|m[6]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|row_addr[6]                                        ;
+; win3by3_gen:win3by3_gen_inst|m[5]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|row_addr[5]                                        ;
+; win3by3_gen:win3by3_gen_inst|m[4]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|row_addr[4]                                        ;
+; win3by3_gen:win3by3_gen_inst|m[3]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|row_addr[3]                                        ;
+; win3by3_gen:win3by3_gen_inst|m[2]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|row_addr[2]                                        ;
+; win3by3_gen:win3by3_gen_inst|m[1]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|row_addr[1]                                        ;
+; win3by3_gen:win3by3_gen_inst|m[0]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|row_addr[0]                                        ;
+; win3by3_gen:win3by3_gen_inst|n[9]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|column_addr[9]                                     ;
+; win3by3_gen:win3by3_gen_inst|m[9]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|row_addr[9]                                        ;
+; win3by3_gen:win3by3_gen_inst|n[7]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|column_addr[7]                                     ;
+; win3by3_gen:win3by3_gen_inst|n[6]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|column_addr[6]                                     ;
+; win3by3_gen:win3by3_gen_inst|n[5]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|column_addr[5]                                     ;
+; win3by3_gen:win3by3_gen_inst|n[4]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|column_addr[4]                                     ;
+; win3by3_gen:win3by3_gen_inst|n[3]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|column_addr[3]                                     ;
+; win3by3_gen:win3by3_gen_inst|n[2]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|column_addr[2]                                     ;
+; win3by3_gen:win3by3_gen_inst|n[1]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|column_addr[1]                                     ;
+; win3by3_gen:win3by3_gen_inst|n[0]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|column_addr[0]                                     ;
+; win3by3_gen:win3by3_gen_inst|a33[0] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a33[0]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|n[8]   ; Lost Fanouts              ; counter_ctrl:counter_ctrl_inst|column_addr[8]                                     ;
+; win3by3_gen:win3by3_gen_inst|a11[5] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a11[5]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a11[4] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a11[4]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a11[3] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a11[3]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a11[2] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a11[2]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a11[1] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a11[1]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a11[0] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a11[0]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a12[5] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a12[5]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a12[4] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a12[4]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a12[3] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a12[3]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a12[2] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a12[2]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a12[1] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a12[1]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a12[0] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a12[0]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a13[5] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a13[5]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a13[4] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a13[4]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a13[3] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a13[3]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a13[2] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a13[2]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a13[1] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a13[1]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a13[0] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a13[0]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a21[7] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a21[7]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a21[6] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a21[6]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a21[5] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a21[5]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a21[4] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a21[4]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a21[3] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a21[3]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a21[2] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a21[2]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a21[1] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a21[1]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a21[0] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a21[0]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a22[7] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a22[7]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a22[6] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a22[6]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a22[5] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a22[5]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a22[4] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a22[4]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a22[3] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a22[3]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a22[2] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a22[2]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a22[1] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a22[1]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a22[0] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a22[0]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a23[7] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a23[7]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a23[6] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a23[6]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a23[5] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a23[5]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a23[4] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a23[4]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a23[3] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a23[3]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a23[2] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a23[2]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a23[1] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a23[1]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a23[0] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a23[0]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a31[7] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a31[7]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a31[6] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a31[6]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a31[5] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a31[5]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a31[4] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a31[4]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a31[3] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a31[3]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a31[2] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a31[2]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a31[1] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a31[1]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a31[0] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a31[0]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a32[7] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a32[7]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a32[6] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a32[6]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a32[5] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a32[5]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a32[4] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a32[4]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a32[3] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a32[3]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a32[2] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a32[2]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a32[1] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a32[1]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a32[0] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a32[0]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a33[7] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a33[7]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a33[6] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a33[6]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a33[5] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a33[5]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a33[4] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a33[4]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a33[3] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a33[3]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a33[2] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a33[2]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
+; win3by3_gen:win3by3_gen_inst|a33[1] ; Stuck at GND              ; medfilter3by3:medfilter3by3_inst|a33[1]                                           ;
+;                                     ; due to stuck port data_in ;                                                                                   ;
++-------------------------------------+---------------------------+-----------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 12    ;
+; Number of registers using Synchronous Clear  ; 4     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 12    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "counter_ctrl:counter_ctrl_inst" ;
++------------+-------+----------+----------------------------+
+; Port       ; Type  ; Severity ; Details                    ;
++------------+-------+----------+----------------------------+
+; cols[8..0] ; Input ; Info     ; Stuck at GND               ;
+; cols[9]    ; Input ; Info     ; Stuck at VCC               ;
++------------+-------+----------+----------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "win3by3_gen:win3by3_gen_inst"                                                               ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; cols[8..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cols[9]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; rows[8..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; rows[9]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; rom_addr_sig ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 12                          ;
+; cycloneiii_ff         ; 12                          ;
+;     CLR               ; 8                           ;
+;     CLR SCLR          ; 4                           ;
+; cycloneiii_lcell_comb ; 12                          ;
+;     arith             ; 3                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 9                           ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 3                           ;
+;         4 data inputs ; 3                           ;
+;                       ;                             ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.16                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+    Info: Processing started: Sat Jul 11 16:29:45 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off medfilter2 -c medfilter2
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file win3by3_gen.v
+    Info (12023): Found entity 1: win3by3_gen File: C:/singal2/final_project/verilog/win3by3_gen.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file medfilter_tb.v
+    Info (12023): Found entity 1: medfilter_tb File: C:/singal2/final_project/verilog/medfilter_tb.v Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file medfilter3by3.v
+    Info (12023): Found entity 1: medfilter3by3 File: C:/singal2/final_project/verilog/medfilter3by3.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file medfilter2.v
+    Info (12023): Found entity 1: medfilter2 File: C:/singal2/final_project/verilog/medfilter2.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file counter_ctrl.v
+    Info (12023): Found entity 1: counter_ctrl File: C:/singal2/final_project/verilog/counter_ctrl.v Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at medfilter2.v(63): created implicit net for "win_start_sig" File: C:/singal2/final_project/verilog/medfilter2.v Line: 63
+Info (12127): Elaborating entity "medfilter2" for the top level hierarchy
+Info (12128): Elaborating entity "win3by3_gen" for hierarchy "win3by3_gen:win3by3_gen_inst" File: C:/singal2/final_project/verilog/medfilter2.v Line: 80
+Warning (10230): Verilog HDL assignment warning at win3by3_gen.v(139): truncated value with size 32 to match size of target (18) File: C:/singal2/final_project/verilog/win3by3_gen.v Line: 139
+Warning (10230): Verilog HDL assignment warning at win3by3_gen.v(142): truncated value with size 32 to match size of target (18) File: C:/singal2/final_project/verilog/win3by3_gen.v Line: 142
+Warning (10230): Verilog HDL assignment warning at win3by3_gen.v(145): truncated value with size 32 to match size of target (18) File: C:/singal2/final_project/verilog/win3by3_gen.v Line: 145
+Warning (10230): Verilog HDL assignment warning at win3by3_gen.v(148): truncated value with size 32 to match size of target (18) File: C:/singal2/final_project/verilog/win3by3_gen.v Line: 148
+Warning (10230): Verilog HDL assignment warning at win3by3_gen.v(151): truncated value with size 32 to match size of target (18) File: C:/singal2/final_project/verilog/win3by3_gen.v Line: 151
+Warning (10230): Verilog HDL assignment warning at win3by3_gen.v(154): truncated value with size 32 to match size of target (18) File: C:/singal2/final_project/verilog/win3by3_gen.v Line: 154
+Warning (10230): Verilog HDL assignment warning at win3by3_gen.v(157): truncated value with size 32 to match size of target (18) File: C:/singal2/final_project/verilog/win3by3_gen.v Line: 157
+Warning (10230): Verilog HDL assignment warning at win3by3_gen.v(160): truncated value with size 32 to match size of target (18) File: C:/singal2/final_project/verilog/win3by3_gen.v Line: 160
+Warning (10230): Verilog HDL assignment warning at win3by3_gen.v(163): truncated value with size 32 to match size of target (18) File: C:/singal2/final_project/verilog/win3by3_gen.v Line: 163
+Info (12128): Elaborating entity "counter_ctrl" for hierarchy "counter_ctrl:counter_ctrl_inst" File: C:/singal2/final_project/verilog/medfilter2.v Line: 93
+Warning (10230): Verilog HDL assignment warning at counter_ctrl.v(80): truncated value with size 32 to match size of target (10) File: C:/singal2/final_project/verilog/counter_ctrl.v Line: 80
+Warning (10230): Verilog HDL assignment warning at counter_ctrl.v(81): truncated value with size 32 to match size of target (10) File: C:/singal2/final_project/verilog/counter_ctrl.v Line: 81
+Info (12128): Elaborating entity "medfilter3by3" for hierarchy "medfilter3by3:medfilter3by3_inst" File: C:/singal2/final_project/verilog/medfilter2.v Line: 116
+Warning (10036): Verilog HDL or VHDL warning at medfilter3by3.v(75): object "c11" assigned a value but never read File: C:/singal2/final_project/verilog/medfilter3by3.v Line: 75
+Warning (10036): Verilog HDL or VHDL warning at medfilter3by3.v(76): object "c12" assigned a value but never read File: C:/singal2/final_project/verilog/medfilter3by3.v Line: 76
+Warning (10036): Verilog HDL or VHDL warning at medfilter3by3.v(78): object "c21" assigned a value but never read File: C:/singal2/final_project/verilog/medfilter3by3.v Line: 78
+Warning (10036): Verilog HDL or VHDL warning at medfilter3by3.v(80): object "c23" assigned a value but never read File: C:/singal2/final_project/verilog/medfilter3by3.v Line: 80
+Warning (10036): Verilog HDL or VHDL warning at medfilter3by3.v(82): object "c32" assigned a value but never read File: C:/singal2/final_project/verilog/medfilter3by3.v Line: 82
+Warning (10036): Verilog HDL or VHDL warning at medfilter3by3.v(83): object "c33" assigned a value but never read File: C:/singal2/final_project/verilog/medfilter3by3.v Line: 83
+Warning (10230): Verilog HDL assignment warning at medfilter3by3.v(122): truncated value with size 32 to match size of target (3) File: C:/singal2/final_project/verilog/medfilter3by3.v Line: 122
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Data_out[0]" is stuck at GND File: C:/singal2/final_project/verilog/medfilter2.v Line: 35
+    Warning (13410): Pin "Data_out[1]" is stuck at GND File: C:/singal2/final_project/verilog/medfilter2.v Line: 35
+    Warning (13410): Pin "Data_out[2]" is stuck at GND File: C:/singal2/final_project/verilog/medfilter2.v Line: 35
+    Warning (13410): Pin "Data_out[3]" is stuck at GND File: C:/singal2/final_project/verilog/medfilter2.v Line: 35
+    Warning (13410): Pin "Data_out[4]" is stuck at GND File: C:/singal2/final_project/verilog/medfilter2.v Line: 35
+    Warning (13410): Pin "Data_out[5]" is stuck at GND File: C:/singal2/final_project/verilog/medfilter2.v Line: 35
+    Warning (13410): Pin "Data_out[6]" is stuck at GND File: C:/singal2/final_project/verilog/medfilter2.v Line: 35
+    Warning (13410): Pin "Data_out[7]" is stuck at GND File: C:/singal2/final_project/verilog/medfilter2.v Line: 35
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 58 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 25 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 9 output pins
+    Info (21061): Implemented 13 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
+    Info: Peak virtual memory: 4777 megabytes
+    Info: Processing ended: Sat Jul 11 16:29:58 2020
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:31
+
+

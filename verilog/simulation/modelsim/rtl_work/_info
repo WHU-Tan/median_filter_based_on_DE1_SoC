@@ -1,0 +1,98 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/singal2/final_project/verilog/simulation/modelsim
+vcounter_ctrl
+Z1 !s110 1594456285
+!i10b 1
+!s100 Ge?kc4L=WFVFa5lg49EXR2
+IIF1El06cTU7HzZMK]<Gda1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1594452373
+8C:/singal2/final_project/verilog/counter_ctrl.v
+FC:/singal2/final_project/verilog/counter_ctrl.v
+Z3 L0 21
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1594456285.000000
+!s107 C:/singal2/final_project/verilog/counter_ctrl.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/singal2/final_project/verilog|C:/singal2/final_project/verilog/counter_ctrl.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+C:/singal2/final_project/verilog
+Z8 tCvgOpt 0
+vmedfilter2
+R1
+!i10b 1
+!s100 f3OXZ8:OTKkHfa`3@TB1b1
+IHm0Cd=6kR`bbNE0Tn4iVC3
+R2
+R0
+w1594456184
+8C:/singal2/final_project/verilog/medfilter2.v
+FC:/singal2/final_project/verilog/medfilter2.v
+L0 22
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/singal2/final_project/verilog/medfilter2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/singal2/final_project/verilog|C:/singal2/final_project/verilog/medfilter2.v|
+!i113 1
+R6
+R7
+R8
+vmedfilter3by3
+R1
+!i10b 1
+!s100 o`mW3g[cZkFn;5cX;iW6=2
+I?bFnS[_kg_>:X54cX?><63
+R2
+R0
+w1594452417
+8C:/singal2/final_project/verilog/medfilter3by3.v
+FC:/singal2/final_project/verilog/medfilter3by3.v
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/singal2/final_project/verilog/medfilter3by3.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/singal2/final_project/verilog|C:/singal2/final_project/verilog/medfilter3by3.v|
+!i113 1
+R6
+R7
+R8
+vwin3by3_gen
+R1
+!i10b 1
+!s100 VZ@8B4l5QGJO9@2XR<[i00
+IB;hJ`oBPQ5f4DEN12km[G2
+R2
+R0
+w1594452334
+8C:/singal2/final_project/verilog/win3by3_gen.v
+FC:/singal2/final_project/verilog/win3by3_gen.v
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/singal2/final_project/verilog/win3by3_gen.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/singal2/final_project/verilog|C:/singal2/final_project/verilog/win3by3_gen.v|
+!i113 1
+R6
+R7
+R8
